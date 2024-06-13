@@ -446,3 +446,87 @@ Traceback (most recent call last):
     raise IOError(
 OSError: No file or directory found at model\model.h5
 [2024-06-13 23:13:01,990: INFO: _internal: 127.0.0.1 - - [13/Jun/2024 23:13:01] "GET / HTTP/1.1" 200 -]
+[2024-06-13 23:14:49,399: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.161:8080]
+[2024-06-13 23:14:49,401: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-06-13 23:14:57,193: INFO: _internal: 192.168.29.161 - - [13/Jun/2024 23:14:57] "GET / HTTP/1.1" 200 -]
+[2024-06-13 23:15:06,708: INFO: _internal: 127.0.0.1 - - [13/Jun/2024 23:15:06] "GET / HTTP/1.1" 200 -]
+[2024-06-13 23:16:47,306: INFO: _internal: 192.168.29.161 - - [13/Jun/2024 23:16:47] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-06-13 23:16:47,313: INFO: _internal: 127.0.0.1 - - [13/Jun/2024 23:16:47] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-06-13 23:17:07,658: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+                         ^^^^^^^^^^^^^^^^^^
+  File "F:\End_to_End\Kidney_Disease_Classification\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Python\End_to_End\Kidney_Disease_Classification\src\cnnClassifier\pipeline\prediction.py", line 16, in predict
+    model = load_model(os.path.join("model", "model.h5"))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python311\Lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+[2024-06-13 23:17:07,662: INFO: _internal: 192.168.29.161 - - [13/Jun/2024 23:17:07] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-06-13 23:20:05,499: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-13 23:20:05,504: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-13 23:20:05,507: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-13 23:20:05,509: INFO: common: created directory at: artifacts]
+[2024-06-13 23:20:05,509: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-06-13 23:20:05,511: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-06-13 23:20:25,253: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-06-13 23:20:27,656: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-06-13 23:20:27,657: INFO: main: *******************]
+[2024-06-13 23:20:27,659: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-06-13 23:20:27,664: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-13 23:20:27,669: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-13 23:20:27,671: INFO: common: created directory at: artifacts]
+[2024-06-13 23:20:27,672: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-06-13 23:20:28,626: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-06-13 23:20:31,499: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-06-13 23:20:31,500: INFO: main: *******************]
+[2024-06-13 23:20:31,504: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-06-13 23:20:31,508: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-13 23:20:31,510: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-13 23:20:31,511: INFO: common: created directory at: artifacts]
+[2024-06-13 23:20:31,512: INFO: common: created directory at: artifacts\training]
+[2024-06-13 23:21:51,247: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-06-13 23:21:51,247: INFO: main: *******************]
+[2024-06-13 23:21:51,253: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-06-13 23:21:51,255: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-13 23:21:51,258: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-13 23:21:51,259: INFO: common: created directory at: artifacts]
+[2024-06-13 23:22:16,165: INFO: common: json file saved at: scores.json]
+[2024-06-13 23:22:16,166: INFO: common: json file saved at: scores.json]
+[2024-06-13 23:22:16,167: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-06-13 23:22:17,220: INFO: _internal: 127.0.0.1 - - [13/Jun/2024 23:22:17] "GET /train HTTP/1.1" 200 -]
