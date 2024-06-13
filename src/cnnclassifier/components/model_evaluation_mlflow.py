@@ -5,7 +5,8 @@ import mlflow.keras
 from urllib.parse import urlparse
 from cnnClassifier.entity.config_entity import EvaluationConfig
 from cnnClassifier.utils.common import read_yaml, create_directories,save_json
-
+import dagshub
+dagshub.init(repo_owner='PallaviPadav', repo_name='Kidney_Disease_Classification', mlflow=True)
 
 class Evaluation:
     def __init__(self, config: EvaluationConfig):
