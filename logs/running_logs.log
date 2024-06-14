@@ -648,3 +648,41 @@ x==========x]
 [2024-06-13 23:42:46,579: WARNING: polymorphic_function: 6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000002128DCEE840> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
 [2024-06-13 23:42:46,586: INFO: _internal: 192.168.29.161 - - [13/Jun/2024 23:42:46] "POST /predict HTTP/1.1" 200 -]
 [2024-06-14 08:28:51,838: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-14 08:31:18,778: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-14 08:31:18,784: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-14 08:31:18,785: INFO: common: created directory at: artifacts]
+[2024-06-14 08:31:18,787: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-06-14 08:31:18,788: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-06-14 08:31:36,833: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-06-14 08:31:38,143: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-06-14 08:31:38,144: INFO: main: *******************]
+[2024-06-14 08:31:38,144: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-06-14 08:31:38,146: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-14 08:31:38,148: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-14 08:31:38,148: INFO: common: created directory at: artifacts]
+[2024-06-14 08:31:38,148: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-06-14 08:31:38,694: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-06-14 08:31:41,349: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-06-14 08:31:41,349: INFO: main: *******************]
+[2024-06-14 08:31:41,350: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-06-14 08:31:41,355: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-14 08:31:41,357: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-14 08:31:41,357: INFO: common: created directory at: artifacts]
+[2024-06-14 08:31:41,358: INFO: common: created directory at: artifacts\training]
+[2024-06-14 08:38:35,366: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-06-14 08:38:35,367: INFO: main: *******************]
+[2024-06-14 08:38:35,367: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-06-14 08:38:35,369: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-14 08:38:35,370: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-14 08:38:35,371: INFO: common: created directory at: artifacts]
+[2024-06-14 08:39:03,674: INFO: common: json file saved at: scores.json]
+[2024-06-14 08:39:03,676: INFO: common: json file saved at: scores.json]
+[2024-06-14 08:39:03,676: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
