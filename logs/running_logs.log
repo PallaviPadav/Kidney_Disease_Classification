@@ -567,3 +567,83 @@ Traceback (most recent call last):
     raise IOError(
 OSError: No file or directory found at model\model.h5
 [2024-06-13 23:23:12,395: INFO: _internal: 127.0.0.1 - - [13/Jun/2024 23:23:12] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-06-13 23:27:30,508: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.161:8080]
+[2024-06-13 23:27:30,510: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-06-13 23:27:38,072: INFO: _internal: 127.0.0.1 - - [13/Jun/2024 23:27:38] "GET / HTTP/1.1" 200 -]
+[2024-06-13 23:27:46,682: INFO: _internal: 127.0.0.1 - - [13/Jun/2024 23:27:46] "POST /predict HTTP/1.1" 200 -]
+[2024-06-13 23:28:01,783: INFO: _internal: 127.0.0.1 - - [13/Jun/2024 23:28:01] "POST /predict HTTP/1.1" 200 -]
+[2024-06-13 23:28:17,398: INFO: _internal: 127.0.0.1 - - [13/Jun/2024 23:28:17] "POST /predict HTTP/1.1" 200 -]
+[2024-06-13 23:29:13,325: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-13 23:29:13,328: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-13 23:29:13,330: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-13 23:29:13,331: INFO: common: created directory at: artifacts]
+[2024-06-13 23:29:13,331: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-06-13 23:29:13,332: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-06-13 23:29:31,078: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-06-13 23:29:32,533: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-06-13 23:30:12,640: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-06-13 23:30:12,644: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-13 23:30:12,646: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-13 23:30:12,646: INFO: common: created directory at: artifacts]
+[2024-06-13 23:30:12,647: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-06-13 23:30:12,648: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-06-13 23:30:30,497: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-06-13 23:30:31,526: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-06-13 23:30:31,527: INFO: main: *******************]
+[2024-06-13 23:30:31,527: INFO: main: >>>>>> stage Prepare base model started <<<<<<]
+[2024-06-13 23:30:31,529: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-13 23:30:31,531: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-13 23:30:31,531: INFO: common: created directory at: artifacts]
+[2024-06-13 23:30:31,532: INFO: common: created directory at: artifacts/prepare_base_model]
+[2024-06-13 23:30:32,045: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-06-13 23:30:33,388: INFO: main: >>>>>> stage Prepare base model completed <<<<<<
+
+x==========x]
+[2024-06-13 23:30:33,389: INFO: main: *******************]
+[2024-06-13 23:30:33,389: INFO: main: >>>>>> stage Training started <<<<<<]
+[2024-06-13 23:30:33,391: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-13 23:30:33,393: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-13 23:30:33,394: INFO: common: created directory at: artifacts]
+[2024-06-13 23:30:33,395: INFO: common: created directory at: artifacts\training]
+[2024-06-13 23:31:43,684: INFO: main: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2024-06-13 23:31:43,686: INFO: main: *******************]
+[2024-06-13 23:31:43,686: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-06-13 23:31:43,688: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-06-13 23:31:43,690: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-06-13 23:31:43,690: INFO: common: created directory at: artifacts]
+[2024-06-13 23:32:07,513: INFO: common: json file saved at: scores.json]
+[2024-06-13 23:32:07,514: INFO: common: json file saved at: scores.json]
+[2024-06-13 23:32:07,515: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2024-06-13 23:32:27,140: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.161:8080]
+[2024-06-13 23:32:27,141: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-06-13 23:33:09,865: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.161:8080]
+[2024-06-13 23:33:09,867: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-06-13 23:33:14,521: INFO: _internal: 127.0.0.1 - - [13/Jun/2024 23:33:14] "GET / HTTP/1.1" 200 -]
+[2024-06-13 23:33:22,788: INFO: _internal: 127.0.0.1 - - [13/Jun/2024 23:33:22] "POST /predict HTTP/1.1" 200 -]
+[2024-06-13 23:42:13,872: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.29.161:8080]
+[2024-06-13 23:42:13,873: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-06-13 23:42:19,884: INFO: _internal: 192.168.29.161 - - [13/Jun/2024 23:42:19] "GET / HTTP/1.1" 200 -]
+[2024-06-13 23:42:29,549: WARNING: polymorphic_function: 5 out of the last 5 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000002128D7DF1A0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-06-13 23:42:29,555: INFO: _internal: 192.168.29.161 - - [13/Jun/2024 23:42:29] "POST /predict HTTP/1.1" 200 -]
+[2024-06-13 23:42:46,579: WARNING: polymorphic_function: 6 out of the last 6 calls to <function Model.make_predict_function.<locals>.predict_function at 0x000002128DCEE840> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-06-13 23:42:46,586: INFO: _internal: 192.168.29.161 - - [13/Jun/2024 23:42:46] "POST /predict HTTP/1.1" 200 -]
