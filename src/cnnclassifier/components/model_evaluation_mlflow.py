@@ -5,8 +5,7 @@ import mlflow.keras
 from urllib.parse import urlparse
 from cnnClassifier.entity.config_entity import EvaluationConfig
 from cnnClassifier.utils.common import read_yaml, create_directories,save_json
-import dagshub
-dagshub.init(repo_owner='PallaviPadav', repo_name='Kidney_Disease_Classification', mlflow=True)
+
 
 class Evaluation:
     def __init__(self, config: EvaluationConfig):
@@ -59,7 +58,6 @@ class Evaluation:
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
         
         with mlflow.start_run():
-            mlflow.autolog()
             mlflow.log_params(self.config.all_params)
             mlflow.log_metrics(
                 {"loss": self.score[0], "accuracy": self.score[1]}
